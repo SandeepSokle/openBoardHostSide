@@ -19,8 +19,6 @@ board.addEventListener("mousedown", function(e) {
   socket.emit("mousedown", point);
   // event emit
 });
-// mmousedown x,y beginPath,moveTo(x,y),color,size
-// mouseMove=> x1,y1, lineTo,stroke
 board.addEventListener("mousemove", function(e) {
   if (isMouseDown == true) {
     // console.log(ctx);

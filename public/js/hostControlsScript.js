@@ -1,22 +1,17 @@
-
-
-
-
 let stopBtn = document.querySelector(".stop");
-// let body = document.querySelector("body");
 let permissionBtn = document.querySelector(".permission");
 let className = [
   "first",
- "second",
+  "second",
   "third",
- "fourth",
+  "fourth",
   "fifth",
   "sixth",
   "seventh",
   "eight",
   "ninth",
- "tenth",
- "eleventh",
+  "tenth",
+  "eleventh",
 ];
 let color = [
   "#fdcb6e",
@@ -35,15 +30,14 @@ let color = [
 
 let clrBoard = document.querySelector(".board");
 
-
 ///////color btn working
 
 let colorBtn = document.querySelector(".gridColor");
 
-colorBtn.addEventListener("click",function(e){
+colorBtn.addEventListener("click", function (e) {
   let idx = 0;
-  for(let i = 0;i<color.length;i++){
-    if(e.currentTarget.classList.contains(`${className[i]}`)==true){
+  for (let i = 0; i < color.length; i++) {
+    if (e.currentTarget.classList.contains(`${className[i]}`) == true) {
       idx = i;
       clrBoard.classList.remove(`${className[i]}`);
       colorBtn.classList.remove(`${className[i]}`);
@@ -56,10 +50,7 @@ colorBtn.addEventListener("click",function(e){
 
   clrBoard.classList.add(`${className[idx]}`);
   colorBtn.classList.add(`${className[idx]}`);
-
-
-
-})
+});
 
 //////permission btn working
 permissionBtn.addEventListener("click", function (e) {
@@ -79,13 +70,7 @@ function grantPermission() {
 
 ////////stop btn working
 stopBtn.addEventListener("click", function () {
-  // body.innerHTML = "";
   console.log("stop event");
   window.location.assign("endingmeeting.html");
   socket.emit("stopboard");
-  // body.innerHTML=`<div class="meetingEndContainer">
-  // <div class="meetingEndPopup">
-  //     <span class="endmeetingspan">Meeting Closed</span>
-  // </div>
-  // </div>`;
 });

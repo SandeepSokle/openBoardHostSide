@@ -32,8 +32,6 @@
     top: -2vh;
   }
   .toolBar{
-    /* display: flex; */
-    /* flex-direction: column; */
     transform: scale(1) ;
   }
 
