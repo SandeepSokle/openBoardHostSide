@@ -19,7 +19,47 @@ board.addEventListener("mousedown", function(e) {
   socket.emit("mousedown", point);
   // event emit
 });
+
+board.addEventListener("pointerover", function(e) {
+  ctx.beginPath();
+  let top = getLocation();
+  ctx.moveTo(e.clientX, e.clientY - top);
+  isMouseDown = true;
+
+  let point = {
+    x: e.clientX,
+    y: e.clientY - top,
+    identifier: "mousedown",
+    color: ctx.strokeStyle,
+    width: ctx.lineWidth
+  };
+
+  undoStack.push(point);
+
+  socket.emit("mousedown", point);
+  // event emit
+});
+
 board.addEventListener("mousemove", function(e) {
+  if (isMouseDown == true) {
+    // console.log(ctx);
+    let top = getLocation();
+
+    ctx.lineTo(e.clientX, e.clientY - top);
+    ctx.stroke();
+    let point = {
+      x: e.clientX,
+      y: e.clientY - top,
+      identifier: "mousemove",
+      color: ctx.strokeStyle,
+      width: ctx.lineWidth
+    };
+    undoStack.push(point);
+    socket.emit("mousemove", point);
+  }
+});
+
+board.addEventListener("pointerover", function(e) {
   if (isMouseDown == true) {
     // console.log(ctx);
     let top = getLocation();
