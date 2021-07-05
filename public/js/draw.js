@@ -20,7 +20,7 @@ board.addEventListener("mousedown", function(e) {
   // event emit
 });
 
-board.addEventListener("pointerover", function(e) {
+board.addEventListener("pointerenter", function(e) {
   ctx.beginPath();
   let top = getLocation();
   ctx.moveTo(e.clientX, e.clientY - top);
