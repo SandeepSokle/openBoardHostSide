@@ -59,24 +59,24 @@ board.addEventListener("mousemove", function(e) {
   }
 });
 
-board.addEventListener("pointerover", function(e) {
-  if (isMouseDown == true) {
-    // console.log(ctx);
-    let top = getLocation();
+// board.addEventListener("pointerover", function(e) {
+//   if (isMouseDown == true) {
+//     // console.log(ctx);
+//     let top = getLocation();
 
-    ctx.lineTo(e.clientX, e.clientY - top);
-    ctx.stroke();
-    let point = {
-      x: e.clientX,
-      y: e.clientY - top,
-      identifier: "mousemove",
-      color: ctx.strokeStyle,
-      width: ctx.lineWidth
-    };
-    undoStack.push(point);
-    socket.emit("mousemove", point);
-  }
-});
+//     ctx.lineTo(e.clientX, e.clientY - top);
+//     ctx.stroke();
+//     let point = {
+//       x: e.clientX,
+//       y: e.clientY - top,
+//       identifier: "mousemove",
+//       color: ctx.strokeStyle,
+//       width: ctx.lineWidth
+//     };
+//     undoStack.push(point);
+//     socket.emit("mousemove", point);
+//   }
+// });
 
 board.addEventListener("mouseup", function(e) {
   isMouseDown = false;
