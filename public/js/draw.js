@@ -20,25 +20,25 @@ board.addEventListener("mousedown", function(e) {
   // event emit
 });
 
-board.addEventListener("pointerenter", function(e) {
-  ctx.beginPath();
-  let top = getLocation();
-  ctx.moveTo(e.clientX, e.clientY - top);
-  isMouseDown = true;
+// board.addEventListener("pointerenter", function(e) {
+//   ctx.beginPath();
+//   let top = getLocation();
+//   ctx.moveTo(e.clientX, e.clientY - top);
+//   isMouseDown = true;
 
-  let point = {
-    x: e.clientX,
-    y: e.clientY - top,
-    identifier: "mousedown",
-    color: ctx.strokeStyle,
-    width: ctx.lineWidth
-  };
+//   let point = {
+//     x: e.clientX,
+//     y: e.clientY - top,
+//     identifier: "mousedown",
+//     color: ctx.strokeStyle,
+//     width: ctx.lineWidth
+//   };
 
-  undoStack.push(point);
+//   undoStack.push(point);
 
-  socket.emit("mousedown", point);
-  // event emit
-});
+//   socket.emit("mousedown", point);
+//   // event emit
+// });
 
 board.addEventListener("mousemove", function(e) {
   if (isMouseDown == true) {
