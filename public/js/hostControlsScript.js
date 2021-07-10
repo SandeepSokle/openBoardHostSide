@@ -55,16 +55,19 @@ colorBtn.addEventListener("click", function (e) {
 //////permission btn working
 permissionBtn.addEventListener("click", function (e) {
   grantPermission();
-  console.log("ok:");
-  socket.emit("myclick");
+//   console.log("ok:");
 });
 
 function grantPermission() {
   let permissionBtn = document.querySelector(".permission");
   if (permissionBtn.classList.contains("selectPermissionBtn")) {
     permissionBtn.classList.remove("selectPermissionBtn");
+  socket.emit("myclick1");
+    
   } else {
     permissionBtn.classList.add("selectPermissionBtn");
+  socket.emit("myclick2");
+    
   }
 }
 
