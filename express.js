@@ -37,9 +37,14 @@ io.on("connection", function(socket) {
     socket.broadcast.emit("onredo");
   });
   
-  socket.on("myclick",function(){
+  socket.on("myclick1",function(){
     
-    socket.broadcast.emit("onclick");
+    socket.broadcast.emit("onclick1");
+ })
+  
+    socket.on("myclick2",function(){
+    
+    socket.broadcast.emit("onclick2");
  })
 
  socket.on("stopboard",function(){
