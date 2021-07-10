@@ -37,15 +37,12 @@ io.on("connection", function(socket) {
     socket.broadcast.emit("onredo");
   });
   
-  socket.on("myclick1",function(){
+  socket.on("myclick",function(){
     
-    socket.broadcast.emit("onclick1");
+    socket.broadcast.emit("onclick");
  })
   
-    socket.on("myclick2",function(){
-    
-    socket.broadcast.emit("onclick2");
- })
+  
 
  socket.on("stopboard",function(){
    socket.broadcast.emit("onstop")
